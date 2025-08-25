@@ -1,4 +1,4 @@
-# 📚 Ejemplo de Documentación del Proyecto
+# 📚 Proyecto 1
 
 > Plantilla genérica para documentar proyectos académicos o de ingeniería.  
 > Copia y adapta las secciones según tu necesidad.
@@ -7,11 +7,11 @@
 
 ## 1) Resumen
 
-- **Nombre del proyecto:** _Mi Proyecto_  
-- **Equipo / Autor(es):** _Nombre(s)_  
-- **Curso / Asignatura:** _Nombre del curso_  
-- **Fecha:** _DD/MM/AAAA_  
-- **Descripción breve:** _Una o dos líneas que expliquen qué hace y por qué._
+- **Nombre del proyecto:** _Si_  
+- **Equipo / Autor(es):** _Rodrigo Miranda FLores_  
+- **Curso / Asignatura:** _Proyecto de ingenieria IV_  
+- **Fecha:** _25/08/2025_  
+- **Descripción breve:** _ Este es mi portafolio de evidencias sobre mi clase de proyecto de ingenieria IV._
 
 !!! tip "Consejo"
     Mantén este resumen corto (máx. 5 líneas). Lo demás va en secciones específicas.
