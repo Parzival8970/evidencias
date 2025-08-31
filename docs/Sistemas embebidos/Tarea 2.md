@@ -7,9 +7,8 @@
 - **Curso / Asignatura:** _Sistemas embebidos 1_  
 - **Fecha:** _27/08/2025_  
 - **Descripción breve:** _En este apartado se muestran 3 ejercicios un Contador binario 4 bits, un barrido de 5 leds y una secuencia en codigo Gray._
-### **Contador binario de 4 bits**
 
-- **Nombre Codigo:**
+### **Contador binario de 4 bits**
 
 
 - **Que debe hacer:**
@@ -39,15 +38,11 @@ int main() {
 ```
 - **Esquematico de conexion:**
 
-
 - **Video:**
 
 
 
 ### **Barrido de 5 Leds**
-
-- **Nombre Codigo:**
-
 
 - **Que debe hacer:**
 _Correr un “1” por cinco LEDs P0..P3 y regresar (0→1→2→3→2→1…)_
@@ -88,15 +83,11 @@ int main() {
 
 - **Esquematico de conexion:**
 
-
 - **Video:**
 
 
 
 ### **Secuencia en codigo Gray**
-
-- **Nombre Codigo:**
-
 
 - **Que debe hacer:**
 _En cuatro leds debe mostrarse cad segundo la representacion en codigo Gray del 0 al 15_
@@ -132,6 +123,5 @@ int main() {
 ```
 
 - **Esquematico de conexion:**
-
 
 - **Video:**
