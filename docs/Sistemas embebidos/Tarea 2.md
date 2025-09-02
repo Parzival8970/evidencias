@@ -35,10 +35,10 @@ int main() {
    }
 }
 ```
-- **Esquematico de conexion:**
-
-- **Video:**
-
+- **Esquematico de conexión:**
+![Esquema de conexión](T2E1.png)
+- **Video:** Video en Youtube
+[Enlace directo](https://youtube.com/shorts/r_rv_efIPUs)
 
 
 ### **Barrido de 5 Leds**
@@ -75,10 +75,10 @@ int main() {
 }
 ```
 
-- **Esquematico de conexion:**
-
-- **Video:**
-
+- **Esquematico de conexión:**
+![Esquema de conexión](T2E2.png)
+- **Video:** Video en Youtube
+[Enlace directo](https://youtu.be/VObCDqgfttQ)
 
 
 ### **Secuencia en codigo Gray**
@@ -110,6 +110,7 @@ int main() {
 }
 ```
 
-- **Esquematico de conexion:**
-
-- **Video:**
+- **Esquematico de conexión:**
+![Esquema de conexión](T2E3.png)
+- **Video:** Video en Youtube
+[Enlace directo](https://youtube.com/shorts/lCM-7CqCMcQ)
