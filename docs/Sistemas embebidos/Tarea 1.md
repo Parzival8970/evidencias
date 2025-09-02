@@ -3,7 +3,7 @@
 ## **Introducción**
 
 - **Nombre del proyecto:** _Tabla comparativa de microcontroladores_  
-- **Equipo / Autor(es):** _Rodrigo Miranda FLores_  
+- **Equipo / Autor(es):** _Rodrigo Miranda Flores_  
 - **Curso / Asignatura:** _Sistemas embebidos 1_  
 - **Fecha:** _25/08/2025_  
 - **Descripción breve:** _En este apartado se muestra un cuadro comparativo sobre microcontroladores elegidos por mi, mencionando cuales me parecen mejores, cuales usaría y porque._
