@@ -18,17 +18,23 @@ Codigo de compuerta AND
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
  
-#define BTN_A 2
-#define BTN_B 3
-#define LED_AND 6
+#define BTN_A 0
+#define BTN_B 1
+#define LED_AND 2
  
 int main() {
     stdio_init_all();
  
-    gpio_init(BTN_A); gpio_set_dir(BTN_A, false); gpio_pull_up(BTN_A);
-    gpio_init(BTN_B); gpio_set_dir(BTN_B, false); gpio_pull_up(BTN_B);
+    gpio_init(BTN_A);
+    gpio_set_dir(BTN_A, false);
+    gpio_pull_up(BTN_A);
  
-    gpio_init(LED_AND); gpio_set_dir(LED_AND, true);
+    gpio_init(BTN_B);
+    gpio_set_dir(BTN_B, false);
+    gpio_pull_up(BTN_B);
+ 
+    gpio_init(LED_AND);
+    gpio_set_dir(LED_AND, true);
  
     while (true) {
         bool a = !gpio_get(BTN_A);
@@ -37,6 +43,7 @@ int main() {
         bool result = a && b;
  
         gpio_put(LED_AND, result);
+ 
         sleep_ms(50);
     }
 }
@@ -48,9 +55,9 @@ Codigo de compuerta OR
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
  
-#define BTN_A 2
-#define BTN_B 3
-#define LED_OR 7
+#define BTN_A 0
+#define BTN_B 1
+#define LED_OR 2
  
 int main() {
     stdio_init_all();
@@ -58,7 +65,6 @@ int main() {
     gpio_init(BTN_A); gpio_set_dir(BTN_A, false); gpio_pull_up(BTN_A);
     gpio_init(BTN_B); gpio_set_dir(BTN_B, false); gpio_pull_up(BTN_B);
  
-  
     gpio_init(LED_OR); gpio_set_dir(LED_OR, true);
  
     while (true) {
@@ -78,9 +84,9 @@ Codigo de compuerta XOR
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
  
-#define BTN_A 2
-#define BTN_B 3
-#define LED_XOR 8
+#define BTN_A 0
+#define BTN_B 1
+#define LED_XOR 2
  
 int main() {
     stdio_init_all();
@@ -102,9 +108,15 @@ int main() {
 }
 ```
 - **Esquematico de conexion:** Se usó el mismo circuito para las 3 compuertas
+![Esquema de conexión](T3E1.png)
 
 - **Video:**
 
+[AND](https://youtube.com/shorts/Al4uy3-YmbE?feature=share)
+
+[OR](https://youtube.com/shorts/1P4SH7KxhFU)
+
+[XOR](https://youtube.com/shorts/eoCzc6YgBfI)
 
 ### **Selector cíclico de 4 LEDs con avance/retroceso**
 
@@ -113,7 +125,68 @@ _Mantén un único LED encendido entre LED0..LED3. Un botón AVANZA (0→1→2�
 
 - **Codigo:**
 ```
-
+#include "pico/stdlib.h"
+ 
+#define BTN_PREV 0      
+#define BTN_NEXT 1    
+#define LED0   2
+#define LED1   3
+#define LED2   4
+#define LED3   5
+ 
+uint8_t STATE = LED0 - 1;
+ 
+int main(void) {
+    const uint8_t LEDs_M = (1u << LED0 | 1u << LED1 | 1u << LED2 | 1u << LED3);
+ 
+    gpio_init_mask(LEDs_M);
+    gpio_set_dir_out_masked(LEDs_M);
+    gpio_set_mask(LEDs_M);   
+    gpio_clr_mask(LEDs_M);
+ 
+    gpio_init(BTN_PREV);
+    gpio_set_dir(BTN_PREV, GPIO_IN);
+    gpio_pull_up(BTN_PREV);
+ 
+    gpio_init(BTN_NEXT);
+    gpio_set_dir(BTN_NEXT, GPIO_IN);
+    gpio_pull_up(BTN_NEXT);
+ 
+    bool NEXT_PREVSTATE = 1;
+    bool PREV_PREVSTATE = 1;
+ 
+    while (true) {
+        bool NEXT_STATE = !gpio_get(BTN_NEXT);
+        bool PREV_STATE = !gpio_get(BTN_PREV);
+ 
+        // Siguiente LED
+        if (NEXT_STATE && !NEXT_PREVSTATE) {
+            if (STATE == LED3) {
+                STATE = LED0;
+            } else {
+                STATE ++;
+            }
+            gpio_clr_mask(LEDs_M);                
+            gpio_set_mask(1 << STATE);              
+        }
+ 
+        // Anterior LED
+        if (PREV_STATE && !PREV_PREVSTATE) {
+            if (STATE == LED0) {
+                STATE = LED3;
+            } else {
+                STATE --;
+            }
+            gpio_clr_mask(LEDs_M);                
+            gpio_set_mask(1 << STATE);              
+        }
+ 
+        NEXT_PREVSTATE = NEXT_STATE;
+        PREV_PREVSTATE = PREV_STATE;
+ 
+        sleep_ms(10);
+    }
+}
 ```
 
 - **Esquematico de conexion:**

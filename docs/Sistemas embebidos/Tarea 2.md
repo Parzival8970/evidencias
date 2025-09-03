@@ -37,8 +37,8 @@ int main() {
 ```
 - **Esquematico de conexión:**
 ![Esquema de conexión](T2E1.png)
-- **Video:** Video en Youtube
-[Enlace directo](https://youtube.com/shorts/r_rv_efIPUs)
+- **Video:**
+[Video en Youtube](https://youtube.com/shorts/r_rv_efIPUs)
 
 
 ### **Barrido de 5 Leds**
@@ -77,8 +77,8 @@ int main() {
 
 - **Esquematico de conexión:**
 ![Esquema de conexión](T2E2.png)
-- **Video:** Video en Youtube
-[Enlace directo](https://youtu.be/VObCDqgfttQ)
+- **Video:** 
+[Video en Youtube](https://youtu.be/VObCDqgfttQ)
 
 
 ### **Secuencia en codigo Gray**
@@ -112,5 +112,5 @@ int main() {
 
 - **Esquematico de conexión:**
 ![Esquema de conexión](T2E3.png)
-- **Video:** Video en Youtube
-[Enlace directo](https://youtube.com/shorts/lCM-7CqCMcQ)
+- **Video:**
+[Video en Youtube](https://youtube.com/shorts/lCM-7CqCMcQ)
