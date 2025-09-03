@@ -190,5 +190,6 @@ int main(void) {
 ```
 
 - **Esquematico de conexion:**
-
+![Esquema de conexión](T3E2.png)
 - **Video:**
+[Video en youtube](https://youtube.com/shorts/-E7wB8Z-OBw)
