@@ -10,7 +10,6 @@
 
 ### **Contador binario de 4 bits**
 
-
 - **Que debe hacer:**
 _En cuatro leds debe mostrarse cad segundo la representacion binaria del 0 al 15_
 
@@ -35,8 +34,10 @@ int main() {
    }
 }
 ```
+
 - **Esquematico de conexión:**
 ![Esquema de conexión](T2E1.png)
+
 - **Video:**
 [Video en Youtube](https://youtube.com/shorts/r_rv_efIPUs)
 
@@ -77,6 +78,7 @@ int main() {
 
 - **Esquematico de conexión:**
 ![Esquema de conexión](T2E2.png)
+
 - **Video:** 
 [Video en Youtube](https://youtu.be/VObCDqgfttQ)
 
@@ -112,5 +114,6 @@ int main() {
 
 - **Esquematico de conexión:**
 ![Esquema de conexión](T2E3.png)
+
 - **Video:**
 [Video en Youtube](https://youtube.com/shorts/lCM-7CqCMcQ)

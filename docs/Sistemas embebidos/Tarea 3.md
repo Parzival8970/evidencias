@@ -112,11 +112,11 @@ int main() {
 
 - **Video:**
 
-[AND](https://youtube.com/shorts/Al4uy3-YmbE?feature=share)
+[Compuerta AND](https://youtube.com/shorts/Al4uy3-YmbE?feature=share)
 
-[OR](https://youtube.com/shorts/1P4SH7KxhFU)
+[Compuerta OR](https://youtube.com/shorts/1P4SH7KxhFU)
 
-[XOR](https://youtube.com/shorts/eoCzc6YgBfI)
+[Compuerta XOR](https://youtube.com/shorts/eoCzc6YgBfI)
 
 ### **Selector cíclico de 4 LEDs con avance/retroceso**
 
