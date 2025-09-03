@@ -9,4 +9,4 @@ Este es mi portafolio de evidencias basado en [MkDocs](https://www.mkdocs.org/) 
 
 _Mi nombre es Rodrigo Miranda Flores, aquí encontraras mi documentación sobre mis proyectos, ejercicios de clase y tareas con una breve explicación, evidencias esperando te agrade y te sirva un poco._
 
-<img src="../recursos/imgs/Yo.jpg" alt="Soy ese" width="200">
+<img src="../recursos/imgs/Yo.jpg" alt="Yo" width="200">
