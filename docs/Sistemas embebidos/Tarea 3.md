@@ -159,7 +159,6 @@ int main(void) {
         bool NEXT_STATE = !gpio_get(BTN_NEXT);
         bool PREV_STATE = !gpio_get(BTN_PREV);
  
-        // Siguiente LED
         if (NEXT_STATE && !NEXT_PREVSTATE) {
             if (STATE == LED3) {
                 STATE = LED0;
@@ -170,7 +169,6 @@ int main(void) {
             gpio_set_mask(1 << STATE);              
         }
  
-        // Anterior LED
         if (PREV_STATE && !PREV_PREVSTATE) {
             if (STATE == LED0) {
                 STATE = LED3;
@@ -191,5 +189,6 @@ int main(void) {
 
 - **Esquematico de conexion:**
 ![Esquema de conexión](T3E2.png)
+
 - **Video:**
 [Video en youtube](https://youtube.com/shorts/-E7wB8Z-OBw)
