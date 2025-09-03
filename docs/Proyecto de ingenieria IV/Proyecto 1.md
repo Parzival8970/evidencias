@@ -3,7 +3,7 @@
 ## **Introducción**
 
 - **Nombre del proyecto:** _Si_  
-- **Equipo / Autor(es):** _Rodrigo Miranda FLores_  
+- **Equipo / Autor(es):** _Rodrigo Miranda Flores_  
 - **Curso / Asignatura:** _Proyecto de ingenieria IV_  
 - **Fecha:** _25/08/2025_  
 - **Descripción breve:** _ Este es mi portafolio de evidencias sobre mi clase de proyecto de ingenieria IV._
