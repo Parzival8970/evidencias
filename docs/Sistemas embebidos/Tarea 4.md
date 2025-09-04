@@ -143,7 +143,7 @@ int main() {
 }
 ```
 
-- **Esquematico de conexion:** Se usó el mismo circuito para las 3 compuertas
+- **Esquematico de conexion:**
 ![Esquema de conexión](T4.png)
 
 - **Video:**
