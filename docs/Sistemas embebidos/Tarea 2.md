@@ -10,10 +10,10 @@
 
 ### **Contador binario de 4 bits**
 
-- **Que debe hacer:**
+1) **Que debe hacer:**
 _En cuatro leds debe mostrarse cad segundo la representacion binaria del 0 al 15_
 
-- **Codigo:**
+2) **Codigo:**
 ``` 
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
@@ -35,19 +35,19 @@ int main() {
 }
 ```
 
-- **Esquematico de conexión:**
+3) **Esquematico de conexión:**
 ![Esquema de conexión](T2E1.png)
 
-- **Video:**
+4) **Video:**
 [Video en Youtube](https://youtube.com/shorts/r_rv_efIPUs)
 
 
 ### **Barrido de 5 Leds**
 
-- **Que debe hacer:**
+1) **Que debe hacer:**
 _Correr un “1” por cinco LEDs P0..P3 y regresar (0→1→2→3→2→1…)_
 
-- **Codigo:**
+2) **Codigo:**
 ``` 
 #include "pico/stdli-b.h"
 #include "hardware/gpio.h"
@@ -76,19 +76,19 @@ int main() {
 }
 ```
 
-- **Esquematico de conexión:**
+3) **Esquematico de conexión:**
 ![Esquema de conexión](T2E2.png)
 
-- **Video:** 
+4) **Video:** 
 [Video en Youtube](https://youtu.be/VObCDqgfttQ)
 
 
 ### **Secuencia en codigo Gray**
 
-- **Que debe hacer:**
+1) **Que debe hacer:**
 _En cuatro leds debe mostrarse cad segundo la representacion en codigo Gray del 0 al 15_
 
-- **Codigo:**
+2) **Codigo:**
 ```
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
@@ -112,8 +112,8 @@ int main() {
 }
 ```
 
-- **Esquematico de conexión:**
+3) **Esquematico de conexión:**
 ![Esquema de conexión](T2E3.png)
 
-- **Video:**
+4) **Video:**
 [Video en Youtube](https://youtube.com/shorts/lCM-7CqCMcQ)

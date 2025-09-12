@@ -9,10 +9,13 @@
 - **Descripción breve:** _En este apartado se muestra el juego "Led Pong" hecho con una raspberry Pico 2._
 ### **LED PONG**
 
-- **Que debe hacer:**
+1) **Que debe hacer:**
 _Se trara de un mini-Pong con 5 LEDs en línea y 2 botones usando interrupciones (ISR) para registrar el “golpe” del jugador exactamente cuando la “pelota” (un LED encendido) llega al extremo de su lado._
 
-- **Reglas del juego**
+---
+
+2) **Reglas del juego**
+
 1) Pelota: es un único LED encendido que se mueve automáticamente de un extremo al otro (L1→L5→L1…) a un ritmo fijo.
 
 2) Golpe con ISR: cada botón genera una interrupción.
@@ -33,7 +36,9 @@ _Se trara de un mini-Pong con 5 LEDs en línea y 2 botones usando interrupciones
 
 6) Inicio del juego: al encender, la pelota inicia en L3 y no se mueve hasta que se presione un boton y debera moverse a la direccion opuesta del boton presionado.
 
-- **Codigo:**
+---
+
+3) **Codigo:**
 ```
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
@@ -143,9 +148,9 @@ int main() {
 }
 ```
 
-- **Esquematico de conexion:**
+4) **Esquematico de conexion:**
 ![Esquema de conexión](T4.png)
 
-- **Video:**
+5) **Video:**
 
 [Video en youtube](https://youtube.com/shorts/lCiT8hK5L0s)

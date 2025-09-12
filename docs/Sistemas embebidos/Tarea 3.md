@@ -9,10 +9,10 @@
 - **Descripción breve:** _En este apartado se muestran  2 ejercicios 3 compuertas básicas AND / OR / XOR con 2 botones y un selector cíclico de 4 LEDs con avance/retroceso._
 ### **3 compuertas básicas AND / OR / XOR con 2 botones**
 
-- **Que debe hacer:**
+1) **Que debe hacer:**
 _Con dos botones A y B (pull-up; presionado=0) enciende tres LEDs que muestren en paralelo los resultados de AND, OR y XOR. En el video muestra las 4 combinaciones (00, 01, 10, 11)._
 
-- **Codigo:**
+2) **Codigo:**
 Codigo de compuerta AND
 ```
 #include "pico/stdlib.h"
@@ -107,10 +107,10 @@ int main() {
     }
 }
 ```
-- **Esquematico de conexion:** Se usó el mismo circuito para las 3 compuertas
+3) **Esquematico de conexion:** Se usó el mismo circuito para las 3 compuertas
 ![Esquema de conexión](T3E1.png)
 
-- **Video:**
+4) **Video:**
 
 [Compuerta AND](https://youtube.com/shorts/Al4uy3-YmbE?feature=share)
 
@@ -120,10 +120,10 @@ int main() {
 
 ### **Selector cíclico de 4 LEDs con avance/retroceso**
 
-- **Que debe hacer:**
+1) **Que debe hacer:**
 _Mantén un único LED encendido entre LED0..LED3. Un botón AVANZA (0→1→2→3→0) y otro RETROCEDE (0→3→2→1→0). Un push = un paso (antirrebote por flanco: si dejas presionado no repite). En el video demuestra en ambos sentidos._
 
-- **Codigo:**
+2) **Codigo:**
 ```
 #include "pico/stdlib.h"
  
@@ -187,8 +187,8 @@ int main(void) {
 }
 ```
 
-- **Esquematico de conexion:**
+3) **Esquematico de conexion:**
 ![Esquema de conexión](T3E2.png)
 
-- **Video:**
+4) **Video:**
 [Video en youtube](https://youtube.com/shorts/-E7wB8Z-OBw)
