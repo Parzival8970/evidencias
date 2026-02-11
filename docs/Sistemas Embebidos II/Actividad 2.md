@@ -261,7 +261,32 @@ void app_main(void)
 ### 8) Files & Media   
   
 **Video:**
-<iframe width="560" height="315" src="https://www.https://youtu.be/KftCGIfK0dA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; margin-bottom: 1em;">
+  <iframe src="https://www.youtube.com/embed/Y9mv5JWeW8s"
+          style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+  </iframe>
+</div>
+ 
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; margin-bottom: 1em;">
+  <iframe src="https://www.youtube.com/embed/Reug2RoNv5U"
+          style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+  </iframe>
+</div>
+
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; margin-bottom: 1em;">
+  <iframe src="https://www.youtube.com/embed/4Fr0Uen0l_8"
+          style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+  </iframe>
+</div>
+
+
+
 
 ## Lab 3 
 
@@ -415,3 +440,19 @@ void app_main(void)
 ### 8) Files & Media   
   
 **Video:**
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; margin-bottom: 1em;">
+  <iframe src="https://www.youtube.com/embed/SmzL48gzATg"
+          style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+  </iframe>
+</div>
+
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; margin-bottom: 1em;">
+  <iframe 
+      src="https://www.youtube.com/embed/unzitdyjd8U"
+      style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+  </iframe>
+</div>
