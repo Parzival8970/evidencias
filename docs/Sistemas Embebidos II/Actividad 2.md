@@ -259,19 +259,9 @@ void app_main(void)
 ```
 
 ### 8) Files & Media   
-
-**connection diagram:**   
-  ![connection diagram](E2.png)
   
 **Video:**
-
-    <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; margin-bottom: 1em;">
-        <a href="https://youtube.com/shorts/KFyQ9D2mdsE?feature=share" target="_blank" rel="noopener">
-            <img src="https://img.youtube.com/vi/KFyQ9D2mdsE/hqdefault.jpg"
-                 alt="Preview video"
-                 style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; object-fit: cover; border: none;">
-        </a>
-    </div>
+<iframe width="560" height="315" src="https://www.https://youtu.be/KftCGIfK0dA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Lab 3 
 
@@ -423,16 +413,5 @@ void app_main(void)
 ```
 
 ### 8) Files & Media   
-
-**connection diagram:**   
-  ![connection diagram](E2.png)
   
 **Video:**
-  
-    <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; margin-bottom: 1em;">
-        <a href="https://youtube.com/shorts/KFyQ9D2mdsE?feature=share" target="_blank" rel="noopener">
-            <img src="https://img.youtube.com/vi/KFyQ9D2mdsE/hqdefault.jpg"
-                 alt="Preview video"
-                 style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; object-fit: cover; border: none;">
-        </a>
-    </div>

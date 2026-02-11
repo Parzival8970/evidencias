@@ -125,12 +125,12 @@ void app_main(void)
 ## 8) Files & Media   
 
 **connection diagram:**   
-  ![connection diagram](E2.png)
+  ![connection diagram](.png)
   
 **Video:**
   
   <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; margin-bottom: 1em;">
-    <iframe src="https://youtube.com/shorts/KFyQ9D2mdsE"
+    <iframe src="https://youtube.comQ9D2mdsE"
             style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;"
             allowfullscreen>
     </iframe>
