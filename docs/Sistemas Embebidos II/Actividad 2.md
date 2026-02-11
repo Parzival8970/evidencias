@@ -1,6 +1,7 @@
 # Lab 1-3 — RTOS Basics with ESP-IDF LAB
 
-**_The purpose of these labs 1-3 is to analyze changes in our code or new behaviors_**
+**_Purpose of the session:_**  
+_The purpose of these labs 1-3 is to analyze changes in our code or new behaviors_
 
 ## Lab 1 
 
@@ -77,7 +78,7 @@ _Proposed fixes: Ensure all tasks include appropriate blocking calls (vTaskDelay
 #include "driver/gpio.h"
 #include "esp_log.h"
 
-#define LED_GPIO GPIO_NUM_2   // CHANGE for your board
+#define LED_GPIO GPIO_NUM_2   
 
 static const char *TAG = "LAB1";
 
@@ -117,7 +118,7 @@ void app_main(void)
 ### 8) Files & Media   
 
 **connection diagram:**   
-  ![connection diagram](Elb1.jpeg)
+  ![connection diagram](lab1.png)
   
 **Video:**
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KFyQ9D2mdsE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -218,7 +219,7 @@ static void producer_task(void *pvParameters)
     while (1) {
         value++;
 
-        // Send to queue; wait up to 50ms if full
+        
         if (xQueueSend(q_numbers, &value, pdMS_TO_TICKS(50)) == pdPASS) {
             ESP_LOGI(TAG, "Produced %d", value);
         } else {
@@ -247,7 +248,7 @@ void app_main(void)
 {
     ESP_LOGI(TAG, "Starting Lab 2 (queue)");
 
-    q_numbers = xQueueCreate(5, sizeof(int)); // length 5
+    q_numbers = xQueueCreate(5, sizeof(int));
     if (q_numbers == NULL) {
         ESP_LOGE(TAG, "Queue create failed");
         return;
