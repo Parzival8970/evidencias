@@ -24,30 +24,23 @@ markdown_extensions:
       custom_checkbox: true
       clickable_checkbox: true
 # Use the ReadTheDocs theme
+
 theme:
   name: material
-  custom_dir: overrides
   highlightjs: true 
   palette:
-    # Modo claro
     - scheme: default
       primary: green
       accent: red
       toggle:
         icon: material/weather-night
         name: Cambiar a modo oscuro
-    # Modo oscuro
     - scheme: slate
       primary: green
       accent: red
       toggle:
         icon: material/weather-sunny
         name: Cambiar a modo claro
-
   features:
     - content.code.copy
     - content.tooltips
-extra_css:
-  - https://use.fontawesome.com/releases/v6.5.2/css/all.css
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
-
