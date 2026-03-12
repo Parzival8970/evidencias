@@ -1,77 +1,77 @@
-# Lab de Programación Wi-Fi: Control mediante MQTT
+# Wi-Fi Programming Lab: MQTT Control
 
-**Propósito de la sesión:**  
-El objetivo general de esta sesión de laboratorio es desarrollar un sistema embebido basado en ESP32 con conectividad Wi-Fi y comunicación mediante el protocolo MQTT para el control remoto de dispositivos y el monitoreo de sensores.
+**Session Purpose:**  
+The general goal of this lab session is to develop an embedded system based on ESP32 with Wi-Fi connectivity and communication through the MQTT protocol for remote device control and sensor monitoring.
 
-En esta práctica se utilizó el protocolo MQTT, el cual es un protocolo de mensajería ligero basado en el modelo **publish/subscribe**, donde los dispositivos envían o reciben información a través de un **broker MQTT**.
+In this practice the MQTT protocol was used, which is a lightweight messaging protocol based on the **publish/subscribe** model, where devices send or receive information through an **MQTT broker**.
 
 ---
 
-## 1) Objetivos de la Actividad    
-_Para este laboratorio se implementará un sistema que permita monitorear variables simuladas y controlar un actuador utilizando el protocolo MQTT._  
+## 1) Activity Objectives    
+_For this lab a system will be implemented that allows monitoring simulated variables and controlling an actuator using the MQTT protocol._  
 
-1) Lectura de valores de temperatura (simulada con potenciómetro)  
-2) Lectura de valores de humedad (simulada con potenciómetro)  
-3) Publicación de datos en tópicos MQTT  
-4) Control remoto de un motor mediante mensajes MQTT  
+1) Temperature value reading (simulated with a potentiometer)  
+2) Humidity value reading (simulated with a potentiometer)  
+3) Publishing data to MQTT topics  
+4) Remote control of a motor through MQTT messages  
 ---
 
-## 2) Materiales y Configuración
+## 2) Materials & Setup
 
-**BOM (Lista de Materiales)**
+**BOM (Bill of Materials)**
 
-|#|Artículo|Cantidad|Notas|
+|#|Item|Qty|Notes|
 |---------|--------|------|--------|
-|1|ESP32|1|Microcontrolador con Wi-Fi|
-|2|Motor|1|Actuador controlado remotamente|
-|3|Potenciómetro (Humedad)|1|Simula sensor de humedad|
-|4|Potenciómetro (Temperatura)|1|Simula sensor de temperatura|
+|1|ESP32|1|Microcontroller with Wi-Fi|
+|2|Motor|1|Remotely controlled actuator|
+|3|Potentiometer (Humidity)|1|Simulates a humidity sensor|
+|4|Potentiometer (Temperature)|1|Simulates a temperature sensor|
 
 ---
 
-**_Herramientas / Software_**   
+**_Tools / Software_**   
 
-* _SO/Entorno: Windows_  
-* _Editores: VS Code / Arduino IDE / ESP-IDF_  
-* _Cliente MQTT: MQTT Explorer_  
-* _Broker MQTT para la comunicación entre el ESP32 y el cliente_  
+* _OS/Environment: Windows_  
+* _Editors: VS Code / Arduino IDE / ESP-IDF_  
+* _MQTT Client: MQTT Explorer_  
+* _MQTT Broker for communication between the ESP32 and the client_  
 
-**_Cableado / Seguridad_**  
+**_Wiring / Safety_**  
 
-* _Alimentación de la placa: USB 5 V desde la PC host_  
-* _Los potenciómetros se conectan a entradas analógicas del ESP32_  
-* _El motor se conecta a una salida controlada por el microcontrolador_  
-* _Verificar conexiones antes de energizar el sistema_  
+* _Board power: USB 5 V from the host PC_  
+* _The potentiometers are connected to analog inputs of the ESP32_  
+* _The motor is connected to an output controlled by the microcontroller_  
+* _Verify connections before powering the system_  
 ---
 
-## 3) Procedimiento   
+## 3) Procedure   
 
-* _**Paso 1:** Conectar el ESP32 al entorno de desarrollo._  
-* _**Paso 2:** Conectar los potenciómetros a entradas analógicas para simular los sensores de temperatura y humedad._  
-* _**Paso 3:** Conectar el motor a una salida controlada del ESP32._  
-* _**Paso 4:** Programar el ESP32 para conectarse a una red Wi-Fi._  
-* _**Paso 5:** Establecer conexión con un broker MQTT._  
-* _**Paso 6:** Publicar los valores de temperatura y humedad en tópicos MQTT independientes._  
-* _**Paso 7:** Utilizar MQTT Explorer para enviar comandos de control al ESP32._  
+* _**Step 1:** Connect the ESP32 to the development environment._  
+* _**Step 2:** Connect the potentiometers to analog inputs to simulate the temperature and humidity sensors._  
+* _**Step 3:** Connect the motor to a controlled output of the ESP32._  
+* _**Step 4:** Program the ESP32 to connect to a Wi-Fi network._  
+* _**Step 5:** Establish connection with an MQTT broker._  
+* _**Step 6:** Publish temperature and humidity values to independent MQTT topics._  
+* _**Step 7:** Use MQTT Explorer to send control commands to the ESP32._  
 ---
 
-## 4) Análisis
+## 4) Analysis
 
-_La implementación de un sistema basado en ESP32 con MQTT demuestra cómo un dispositivo embebido puede integrarse fácilmente en arquitecturas de Internet de las Cosas._
+_The implementation of a system based on ESP32 with MQTT demonstrates how an embedded device can easily integrate into Internet of Things architectures._
 
-_El protocolo MQTT permite una comunicación eficiente entre dispositivos mediante un modelo de publicación y suscripción, lo que facilita el intercambio de datos entre sensores, actuadores y aplicaciones externas._
+_The MQTT protocol enables efficient communication between devices through a publish and subscribe model, facilitating the exchange of data between sensors, actuators, and external applications._
 
-_El uso de potenciómetros como sensores simulados permite probar el sistema sin necesidad de sensores reales, representando variables físicas como temperatura y humedad._
+_The use of potentiometers as simulated sensors allows the system to be tested without the need for real sensors, representing physical variables such as temperature and humidity._
 
-_Además, el uso de una herramienta como **MQTT Explorer** facilita la visualización de los mensajes publicados y permite enviar comandos de control en tiempo real._
+_Additionally, the use of a tool such as **MQTT Explorer** makes it easier to visualize the published messages and allows sending control commands in real time._
 
-_La separación de los datos en diferentes tópicos permite organizar mejor la información del sistema, facilitando el monitoreo individual de cada variable y el control del actuador._
+_The separation of data into different topics helps organize the system information better, facilitating the individual monitoring of each variable and the control of the actuator._
 
-_Este tipo de arquitectura permite desarrollar sistemas de monitoreo y control remoto, donde dispositivos físicos pueden ser gestionados a través de una red utilizando protocolos ligeros diseñados para IoT._
+_This type of architecture allows the development of monitoring and remote control systems, where physical devices can be managed through a network using lightweight protocols designed for IoT._
 
 ---
 
-## 5) Codigo
+## 5) Code
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -284,7 +284,7 @@ static void mqtt_event_handler(void *handler_args,
 
     case MQTT_EVENT_CONNECTED:
 
-        printf("MQTT Conectado\n");
+        printf("MQTT Connected\n");
 
         esp_mqtt_client_subscribe(client, TOPIC_CMD, 1);
         esp_mqtt_client_subscribe(client, TOPIC_MOTOR, 1);
@@ -332,7 +332,7 @@ static void mqtt_event_handler(void *handler_args,
 
     case MQTT_EVENT_DISCONNECTED:
 
-        printf("MQTT Desconectado\n");
+        printf("MQTT Disconnected\n");
 
         break;
 
@@ -369,7 +369,8 @@ void app_main(void)
     mqtt_app_start("mqtt://test.mosquitto.org:1883");
 }
 ```
-## 6) Archivos y Multimedia
+
+## 6) Files & Media   
 
 <div style="text-align:center; margin-top:20px;">
   <iframe 
