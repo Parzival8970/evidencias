@@ -1,95 +1,77 @@
-# Task exercise
+# Lab de Programación Wi-Fi: Control mediante MQTT
 
-**Purpose of the session:**
+**Propósito de la sesión:**  
+El objetivo general de esta sesión de laboratorio es desarrollar un sistema embebido basado en ESP32 con conectividad Wi-Fi y comunicación mediante el protocolo MQTT para el control remoto de dispositivos y el monitoreo de sensores.
 
-_Develop and test an advanced FreeRTOS system using mutexes, queues with structs, heartbeat supervision, and centralized error logging._
+En esta práctica se utilizó el protocolo MQTT, el cual es un protocolo de mensajería ligero basado en el modelo **publish/subscribe**, donde los dispositivos envían o reciben información a través de un **broker MQTT**.
 
-## Lab 1 
+---
 
-## 1) Activity Goals  
+## 1) Objetivos de la Actividad    
+_Para este laboratorio se implementará un sistema que permita monitorear variables simuladas y controlar un actuador utilizando el protocolo MQTT._  
 
-+ _Extend the FreeRTOS multitasking system by integrating heartbeat monitoring, structured queue communication, mutex-protected shared resources, and centralized error handling._
+1) Lectura de valores de temperatura (simulada con potenciómetro)  
+2) Lectura de valores de humedad (simulada con potenciómetro)  
+3) Publicación de datos en tópicos MQTT  
+4) Control remoto de un motor mediante mensajes MQTT  
+---
 
-+ _Validate synchronization mechanisms (mutex), structured message passing (queues with structs), and system robustness under simulated error conditions._
+## 2) Materiales y Configuración
 
-+ _Document the system architecture, task interactions, error management strategy, and observed runtime behavior._
+**BOM (Lista de Materiales)**
 
-## 2) Materials & Setup  
-BOM (bill of materials)
+|#|Artículo|Cantidad|Notas|
+|---------|--------|------|--------|
+|1|ESP32|1|Microcontrolador con Wi-Fi|
+|2|Motor|1|Actuador controlado remotamente|
+|3|Potenciómetro (Humedad)|1|Simula sensor de humedad|
+|4|Potenciómetro (Temperatura)|1|Simula sensor de temperatura|
 
-|#|Item|Qty|Link/Source|Cost (MXN)|Notes|
-|---------|--------|------|--------|--------|--------|
-|1|ESP32|1|amazon|$365|Nothing|
-|2|Led|1|Electronic store|$3|Nothing|
-|3|Push button|2|Electronic store|$2|Nothing|
+---
 
-**_Tools / Software_**   
+**_Herramientas / Software_**   
 
-* _OS/Env: ESP-IDF with FreeRTOS on ESP32 (Windows)_ 
+* _SO/Entorno: Windows_  
+* _Editores: VS Code / Arduino IDE / ESP-IDF_  
+* _Cliente MQTT: MQTT Explorer_  
+* _Broker MQTT para la comunicación entre el ESP32 y el cliente_  
 
-* _Editors: VS Code with ESP-IDF extension, C/C++_  
+**_Cableado / Seguridad_**  
 
-* _Debug/Flash: ESP-IDF monitor and flashing tools_  
+* _Alimentación de la placa: USB 5 V desde la PC host_  
+* _Los potenciómetros se conectan a entradas analógicas del ESP32_  
+* _El motor se conecta a una salida controlada por el microcontrolador_  
+* _Verificar conexiones antes de energizar el sistema_  
+---
 
-**_Wiring / Safety_**  
+## 3) Procedimiento   
 
-* _Board power: USB 5 V from host PC_  
+* _**Paso 1:** Conectar el ESP32 al entorno de desarrollo._  
+* _**Paso 2:** Conectar los potenciómetros a entradas analógicas para simular los sensores de temperatura y humedad._  
+* _**Paso 3:** Conectar el motor a una salida controlada del ESP32._  
+* _**Paso 4:** Programar el ESP32 para conectarse a una red Wi-Fi._  
+* _**Paso 5:** Establecer conexión con un broker MQTT._  
+* _**Paso 6:** Publicar los valores de temperatura y humedad en tópicos MQTT independientes._  
+* _**Paso 7:** Utilizar MQTT Explorer para enviar comandos de control al ESP32._  
+---
 
-* _Peripherals: LED (GPIO 4), Button 1 (GPIO 18), Button 2 (GPIO 19)_ 
+## 4) Análisis
 
-* _Safety notes: Verify correct GPIO mapping, enable pull-ups for buttons, avoid short circuits_  
-## 3) Procedure (what you did)  
+_La implementación de un sistema basado en ESP32 con MQTT demuestra cómo un dispositivo embebido puede integrarse fácilmente en arquitecturas de Internet de las Cosas._
 
-* _**Step 1:** Created shared system resources including a mutex (counter_mutex), a message queue (msg_queue), and an error queue (error_queue)._  
-* _**Step 2:** Implemented two increment tasks that safely update a shared counter using a mutex to ensure mutual exclusion._  
-* _**Step 3:** Added a heartbeat task that toggles an LED and periodically reports system status, generating a fatal error after a defined number of cycles._  
-* _**Step 4:** Implemented a producer task that sends structured messages `{int id; int value;}` to a queue._  
-* _**Step 5:** Implemented a consumer task that receives and logs structured messages from the queue._  
-* _**Step 6:** Added two button-monitoring tasks that detect simultaneous button presses and generate error events._  
-* _**Step 7:** Implemented a centralized error logger task that receives error codes from an error queue and logs them._  
-* _**Step 8:** Built, flashed, and monitored the application to validate correct synchronization, communication, and error handling behavior._
-## 4) Data, Tests & Evidence  
-**Test plan:** 
+_El protocolo MQTT permite una comunicación eficiente entre dispositivos mediante un modelo de publicación y suscripción, lo que facilita el intercambio de datos entre sensores, actuadores y aplicaciones externas._
 
-* _Inputs: Button presses, heartbeat cycles, producer message rate, shared counter access_  
+_El uso de potenciómetros como sensores simulados permite probar el sistema sin necesidad de sensores reales, representando variables físicas como temperatura y humedad._
 
-**Expected:** 
+_Además, el uso de una herramienta como **MQTT Explorer** facilita la visualización de los mensajes publicados y permite enviar comandos de control en tiempo real._
 
-- _Safe shared counter increments with no race conditions_  
-- _Proper FIFO message transfer using struct-based queue_ 
-- _Error events logged when triggered_  
-- _Centralized error reporting via error_logger_task_     
+_La separación de los datos en diferentes tópicos permite organizar mejor la información del sistema, facilitando el monitoreo individual de cada variable y el control del actuador._
 
-**Tables/observations**  
-Case | Configuration | Observed Behavior | System Stability | Pass?  
-A | Mutex enabled for counter | Consistent counter increments | Stable |  
-B | Struct queue active | Correct id/value received | Stable |  
-C | Both buttons pressed | Error code generated and logged | Stable |  
-D | Heartbeat fatal cycle triggered | Fatal error logged and recovered | Stable |  
-E | Producer periodic error log | Error message printed | Stable |  
+_Este tipo de arquitectura permite desarrollar sistemas de monitoreo y control remoto, donde dispositivos físicos pueden ser gestionados a través de una red utilizando protocolos ligeros diseñados para IoT._
 
-## 5) Analysis  
+---
 
-_The extended system demonstrates advanced multitasking coordination in FreeRTOS._  
-_The mutex successfully protects the shared_counter variable, preventing race conditions between increment_task instances._  
-_The struct-based queue ensures reliable FIFO communication between producer_task and consumer_task, demonstrating safe structured data transfer._  
-_The heartbeat mechanism introduces supervised periodic system activity and simulated fatal conditions, validating system recovery logic._  
-_Button monitoring tasks generate asynchronous events, which are safely handled through an error queue and centralized error_logger_task._
-
-
-**_This architecture illustrates modular real-time system design using:_**  
-
-- _Mutual exclusion (mutex)_  
-- _Structured inter-task communication (queues with structs)_  
-- _Event-driven error handling_  
-- _Priority-based scheduling_  
-
-**Proposed improvements:** 
-
-* _Add priority inheritance testing, implement ISR-based button handling, or integrate watchdog supervision for enhanced fault tolerance._ 
-
-## 6) Code  
-
+## 5) Codigo
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -387,10 +369,7 @@ void app_main(void)
     mqtt_app_start("mqtt://test.mosquitto.org:1883");
 }
 ```
-
-### 8) Files & Media   
-
-**connection diagram:**   
+## 6) Archivos y Multimedia
 
 <div style="text-align:center; margin-top:20px;">
   <iframe 
