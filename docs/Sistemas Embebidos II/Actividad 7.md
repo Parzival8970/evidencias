@@ -699,7 +699,7 @@ _Validation is performed at the beginning of the write event to ensure that only
 
 ---
 
-#### 5) Code
+#### 5) Code  
 
 ```c
 #include <stdio.h>
