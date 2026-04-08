@@ -67,7 +67,7 @@ _This behavior allows replacing the initial characteristic value with dynamicall
 
 ---
 
-#### 5) Code
+#### 5) Code  
 
 ```c
 #include <stdio.h>
@@ -360,7 +360,7 @@ _This behavior allows basic control of an actuator through BLE._
 
 ---
 
-#### 5) Code
+#### 5) Code  
 
 ```c
 #include <stdio.h>
@@ -1054,7 +1054,7 @@ _This approach demonstrates how multiple services can coexist within the same BL
 
 ---
 
-#### 5) Code
+#### 5) Code  
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -1497,7 +1497,7 @@ _This behavior allows real-time communication without requiring manual reads._
 
 ---
 
-#### 5) Code
+#### 5) Code  
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -2009,7 +2009,8 @@ _This approach enhances efficiency when working with multiple BLE devices._
 
 ---
 
-#### 5) Code
+#### 5) Code  
+
 ```c
 #include <stdio.h>
 #include <string.h>
